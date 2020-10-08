@@ -1,0 +1,13 @@
+.header {
+  background-color: #000;
+  height: 200px;
+  width: 100%;
+  display: inline-block;
+}
+.header h1 {
+  color: #fff;
+  margin: 0%;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 42px;
+}
