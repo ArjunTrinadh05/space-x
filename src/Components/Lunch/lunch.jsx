@@ -7,8 +7,8 @@ export class Lunch extends React.Component {
         <img alt="launch" src={this.props.img} />
         <div className="content">
           <div className="info">
-            <h1>{this.props.title}</h1>
-            <h1>{this.props.date}</h1>
+            <h2>{this.props.title}</h2>
+            <h2>{this.props.date}</h2>
           </div>
           <p>{this.props.des}</p>
         </div>
