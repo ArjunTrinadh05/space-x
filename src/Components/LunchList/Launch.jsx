@@ -2,6 +2,7 @@ import React from "react";
 import { Lunch } from "../Lunch/lunch";
 import "./styles.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 export class Launch extends React.Component {
   state = {
     Data: [],
@@ -33,13 +34,14 @@ export class Launch extends React.Component {
         Details = Details + "  ->" + "this is Not Original Image";
       }
       return (
-        <Lunch
-          key = {`lunchs_${index}`}
-          title={lunchs.mission_name}
-          date={lunchs.launch_date_local}
-          des={Details}
-          img={image}
-        />
+        <Link key={`lunchs_${index}`} to={"/LunchView/"+lunchs.flight_number}>
+          <Lunch
+            title={lunchs.mission_name}
+            date={lunchs.launch_date_local}
+            des={Details}
+            img={image}
+          />
+        </Link>
       );
     });
     return x;
@@ -48,16 +50,3 @@ export class Launch extends React.Component {
     return <div className="LunchList">{this.launchlist()}</div>;
   }
 }
-/* const Launching = this.state.Data.map((Data) => {
-      return (
-        <Launch
-          title="FalconSat"
-          date="2006-03-25T10:30:00+12:0"
-          des=" Successful first stage burn and transition to second stage, maximum
-            altitude 289 km, Premature engine shutdown at T+7 min 30 s, Failed
-            to reach orbit, Failed to recover first stage"
-          img="https://farm5.staticflickr.com/4751/39557026242_384d287045_o.jpg"
-        />
-      );
-    });
-    */
